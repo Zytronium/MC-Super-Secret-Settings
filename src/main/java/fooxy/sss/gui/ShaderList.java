@@ -3,6 +3,7 @@ package fooxy.sss.gui;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
+
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -66,8 +67,7 @@ public enum ShaderList {
     public int getId() {
         return this.id;
     }
-
     public Identifier getResource() {
-        return new Identifier("shaders/post/" + this.name + ".json");
+        return Identifier.tryParse("namespace", "shaders/post/" + this.name + ".json");
     }
 }

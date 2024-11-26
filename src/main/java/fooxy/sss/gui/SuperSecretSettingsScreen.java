@@ -24,8 +24,8 @@ public class SuperSecretSettingsScreen extends Screen {
     @Override
     protected void init() {
 
-        this.addDrawableChild(new TexturedButtonWidget(this.width / 2 + 101, this.height / 6 + 41, 12, 18, 0 , 207, new Identifier("textures/gui/recipe_book.png"), button -> changeShader(true)));
-        this.addDrawableChild(new TexturedButtonWidget(this.width / 2 - 114, this.height / 6 + 41, 12, 18, 14 , 207, new Identifier("textures/gui/recipe_book.png"), button -> changeShader(false)));
+        this.addDrawableChild(new TexturedButtonWidget(this.width / 2 + 101, this.height / 6 + 41, 12, 18, 0 , 207, new Identifier("namespace", "textures/gui/recipe_book.png"), button -> changeShader(true)));
+        this.addDrawableChild(new TexturedButtonWidget(this.width / 2 - 114, this.height / 6 + 41, 12, 18, 14 , 207, new Identifier("namespace","textures/gui/recipe_book.png"), button -> changeShader(false)));
         toggleShader = ButtonWidget.builder(Text.translatable("fooxy.sss.button." + ShaderUtils.enabled), button -> toggleShader()).dimensions(this.width / 2 - 100, this.height / 6 +  64, 200, 20).build();
         this.addDrawableChild(toggleShader);
         cycleShader = CyclingButtonWidget.builder(ShaderList::getName).values(ShaderList.values()).initially(ShaderList.cur).build(this.width / 2 - 100, this.height / 6 + 40, 200, 20, Text.of(""), (cyclingButtonWidget, shader) -> changeShader(true));
